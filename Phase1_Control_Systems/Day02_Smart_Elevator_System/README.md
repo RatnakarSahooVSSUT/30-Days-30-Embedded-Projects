@@ -1,9 +1,9 @@
-# Day 02 - Smart 4-Floor Elevator System 🛗🚪
+# Day 02 - Smart 4-Floor Elevator System
 
 For Day 02 of my *30 Days – 30 Projects* challenge, I built a smart elevator control system that simulates how a real elevator behaves inside a building.
 The goal of this project was to move beyond simple LED logic and start thinking like an embedded systems engineer - handling movement, user inputs, safety conditions, and real-time responses.
 
-## 🚀 What This Elevator Can Do
+##  What This Elevator Can Do
 
 This system simulates a 4-floor elevator with realistic behavior:
 
@@ -14,7 +14,7 @@ This system simulates a 4-floor elevator with realistic behavior:
 - A buzzer sounds when the door opens and closes
 - An emergency stop button safely stops the elevator at the nearest floor and opens the door
 
-## 🧠 How It Works
+##  How It Works
 
 When a floor button is pressed, the system checks if the door is closed and then begins moving toward the requested floor. As the elevator “travels,” LEDs indicate the current floor and the display updates accordingly.
 
@@ -25,7 +25,7 @@ When it reaches the floor:
 
 If the emergency button is pressed while the elevator is moving, the system stops at the nearest floor, opens the door, and waits until the emergency condition is cleared. This simulates real-world elevator safety behavior.
 
-## 🧩 Components Used
+##  Components Used
 
 - Arduino UNO  
 - 4 LEDs for floor position indication  
@@ -37,7 +37,7 @@ If the emergency button is pressed while the elevator is moving, the system stop
 - 2 Piezo buzzers (door open & close alerts)  
 - Resistors and jumper wires  
 
-## 📚 What I Learned From This Project
+##  What I Learned From This Project
 
 - Designing embedded systems using state-based logic  
 - Handling multiple inputs and outputs together  

@@ -1,4 +1,4 @@
-# Smart Parking System with Automatic Gate
+# Day-04 Smart Parking System with Automatic Gate
 
 This project is a simple smart parking system built using Arduino. The idea was to understand how parking lots can automatically detect free and occupied slots and control the entry gate without human intervention.
 

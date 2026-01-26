@@ -1,0 +1,81 @@
+#include<LiquidCrystal.h>
+#include<Servo.h>
+
+LiquidCrystal lcd(A0,A1,A2,A3,A4,A5);
+
+Servo gateServo;
+const int gatepin=0;
+const int trigpins[3]={2,4,6};
+const int echopins[3]={3,5,7};
+const int greenLED[3]={8, 10, 12};
+const int redLED[3]={9, 11, 13};
+
+long duration;
+long distance;
+
+int getdistance(int trigpin, int echopin){
+  digitalWrite(trigpin,LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigpin,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigpin,LOW);
+  
+  duration = pulseIn(echopin, HIGH, 2000);
+  distance = duration*0.034/2;
+  return distance;
+}
+
+void setup(){
+  lcd.begin(16,2);
+  gateServo.attach(gatepin);
+  for (int i = 0; i < 3; i++){
+    pinMode(trigpins[i], OUTPUT);
+    pinMode(echopins[i], INPUT);
+    pinMode(greenLED[i], OUTPUT);
+    pinMode(redLED[i], OUTPUT);
+  }
+  lcd.print(" Smart Parking ");
+  lcd.setCursor(0, 1);
+  lcd.print(" Initializing ");
+  delay(2000);
+  lcd.clear();
+}
+
+void loop(){
+  bool slotOccupied[3];
+  int occupiedCount=0;
+  for (int i=0;i<3;i++){
+    int d= getdistance(trigpins[i],echopins[i]);
+    if (d>0 && d<15){
+      slotOccupied[i] = true;
+      digitalWrite(redLED[i], HIGH);
+      digitalWrite(greenLED[i], LOW);
+      occupiedCount++;
+    }
+    else{
+      slotOccupied[i]=false;
+      digitalWrite(redLED[i],LOW);
+      digitalWrite(greenLED[i],HIGH);
+    }
+  }
+  int freeSlots = 3 - occupiedCount;
+
+  if (freeSlots > 0) {
+    gateServo.write(0);
+  } else {
+    gateServo.write(90);
+  }
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("S1:");
+  lcd.print(slotOccupied[0] ? "FULL " : "FREE ");
+  lcd.print("S2:");
+  lcd.print(slotOccupied[1] ? "FULL" : "FREE");
+  lcd.setCursor(0, 1);
+  lcd.print("S3:");
+  lcd.print(slotOccupied[2] ? "FULL " : "FREE ");
+  lcd.print("G:");
+  lcd.print(freeSlots > 0 ? "OPEN" : "CLOSE");
+  
+  delay(500);
+}

@@ -106,7 +106,7 @@ The system keeps running in a loop, constantly checking water level and updating
 
 ---
 
-## 🛠 Platform Used
+## Platform Used
 
 Designed and simulated using **Tinkercad Circuits**
 

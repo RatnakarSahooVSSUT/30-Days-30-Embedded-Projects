@@ -1,6 +1,6 @@
 # Day 13: Digital Spirit Level using ESP32 & MPU6050
 
-This project is part of my **30 Days – 30 Embedded Systems Projects Challenge**.
+This project is part of my **30 Days - 30 Embedded Systems Projects Challenge**.
 
 A **Digital Spirit Level** (also called a digital inclinometer) is an electronic tool used to measure how level or tilted a surface is. In this project, an **ESP32** reads tilt data from an **MPU6050 accelerometer** and displays the angle on an **I2C 16x2 LCD**. LED indicators provide quick visual feedback for tilt direction.
 
@@ -116,7 +116,7 @@ This project helped me understand:
 
 ## Simulation Platform
 
-The project was built and tested using the **Wokwi ESP32 Simulator** before hardware implementation.
+The project was built and tested using the **Wokwi ESP32 Simulator**.
 
 ---
 

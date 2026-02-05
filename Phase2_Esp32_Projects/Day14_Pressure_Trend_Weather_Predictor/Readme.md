@@ -2,7 +2,7 @@
 
 This project is part of my **30 Days - 30 Embedded Systems Projects Challenge**.
 
-A **barometric pressure sensor** can be used to predict short-term weather changes by observing how atmospheric pressure varies over time. In this project, an **ESP32** reads pressure data from a **BMP180 barometric sensor**, combines it with **temperature and humidity data from a DHT22**, and predicts upcoming weather conditions. A **16x2 I2C LCD** displays live pressure and forecast results, while LEDs provide quick visual weather indicators.
+A **barometric pressure sensor** can be used to predict short-term weather changes by observing how atmospheric pressure varies over time. In this project, an **ESP32** reads pressure and temperature data from a **BMP180 barometric sensor**, combines it with **humidity data from a DHT22**, and predicts upcoming weather conditions. A **16x2 I2C LCD** displays live pressure and forecast results, while LEDs provide quick visual weather indicators.
 
 This simulates the working principle of **home weather stations** and traditional **barometer-based forecasting systems**.
 
@@ -10,8 +10,8 @@ This simulates the working principle of **home weather stations** and traditiona
 
 ## Features
 
-- Real-time atmospheric pressure monitoring using BMP180  
-- Temperature and humidity measurement using DHT22  
+- Real-time atmospheric pressure and temperature monitoring using BMP180  
+- humidity measurement using DHT22  
 - Pressure averaging to reduce noise and improve trend accuracy  
 - Weather forecasting based on **pressure + temperature trends**  
 - Live pressure and forecast display on 16x2 LCD  

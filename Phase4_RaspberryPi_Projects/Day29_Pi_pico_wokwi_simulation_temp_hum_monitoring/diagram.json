@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": -31.95,
+      "left": 138,
+      "attrs": { "env": "micropython-20241129-v1.24.1" }
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -134.1,
+      "left": 13.8,
+      "attrs": { "temperature": "57.1" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 79.94,
+      "left": -153.37,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    { "type": "wokwi-buzzer", "id": "bz1", "top": -84, "left": -75, "attrs": { "volume": "0.1" } },
+    { "type": "wokwi-led", "id": "led1", "top": -90, "left": -159.4, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -25.4,
+      "left": -173.65,
+      "rotate": 270,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "r1:2", "led1:C", "green", [ "h0" ] ],
+    [ "pico:GND.1", "dht1:GND", "black", [ "h0" ] ],
+    [ "dht1:VCC", "pico:3V3", "red", [ "v9.6", "h96", "v-48", "h115.2", "v76.8" ] ],
+    [ "pico:GP15", "dht1:SDA", "blue", [ "h-96" ] ],
+    [ "oled1:VCC", "pico:3V3", "red", [ "v-28.8", "h230.55", "v-115.2", "h115.2", "v76.8" ] ],
+    [ "oled1:GND", "pico:GND.1", "black", [ "v-67.2", "h201.6", "v-19.2" ] ],
+    [ "oled1:SDA", "pico:GP4", "gold", [ "v-57.6", "h230.47" ] ],
+    [ "oled1:SCL", "pico:GP5", "green", [ "v-48", "h0.3" ] ],
+    [ "r1:1", "pico:GND.1", "black", [ "v9.6", "h19.2", "h211.2", "v-19.2" ] ],
+    [ "led1:A", "pico:GP14", "violet", [ "v115.2", "h259.2", "v86.4" ] ],
+    [ "bz1:2", "pico:GP13", "cyan", [ "v134.4", "h-0.4" ] ],
+    [ "bz1:1", "pico:GND.1", "black", [ "v19.2", "h134.4", "v-19.2" ] ]
+  ],
+  "dependencies": {}
+}

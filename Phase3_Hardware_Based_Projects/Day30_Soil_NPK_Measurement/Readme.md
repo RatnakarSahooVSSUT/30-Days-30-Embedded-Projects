@@ -220,4 +220,3 @@ B.Tech Undergraduate
 **30 Days - 30 Embedded Projects Challenge** 🚀
 
 ```
-```

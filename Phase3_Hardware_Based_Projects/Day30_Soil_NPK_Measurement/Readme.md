@@ -1,4 +1,3 @@
-````markdown
 # 🌱 Day 30: Smart Soil NPK Monitoring System using RS485 Modbus RTU 📡🌾
 
 **ESP32 | RS485 NPK Sensor | MAX485 | OLED Display | Precision Agriculture**
